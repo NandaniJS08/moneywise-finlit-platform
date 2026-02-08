@@ -1,8 +1,10 @@
 # 💡 MoneyWise – Gamified Financial Literacy Platform  
 **Innovate4FinLit Hackathon Submission**
 
+🔗 **Live Demo:** https://nandanijs08.github.io/moneywise-finlit-platform/
+
 MoneyWise is a **gamified, offline-first financial literacy platform** that transforms real-world money decisions into interactive simulations.  
-It helps **students and young adults** learn budgeting, saving, debt management, credit behavior, and investing through **hands-on gameplay and behavioral analytics**, not passive theory.
+It helps **students and young adults build real financial habits** around budgeting, saving, debt management, credit behavior, and investing through **hands-on gameplay and behavioral analytics**, not passive theory.
 
 ---
 
@@ -11,9 +13,9 @@ Financial literacy education today is often:
 - Theory-heavy and disengaging  
 - Disconnected from real-life decision-making  
 - Inaccessible without consistent internet access  
-- Unable to measure actual learning outcomes  
+- Unable to measure real learning outcomes  
 
-MoneyWise addresses these gaps by converting **financial behavior into gameplay**, allowing users to learn by making decisions and seeing real consequences.
+MoneyWise addresses these gaps by converting **financial behavior into gameplay**, allowing users to learn by making decisions and experiencing real consequences.
 
 ---
 
@@ -36,15 +38,15 @@ MoneyWise addresses these gaps by converting **financial behavior into gameplay*
 - Demonstrates how habits impact long-term credit health  
 
 ### 4️⃣ Investment Growth Simulator
-- Experience compound interest over time  
+- Experience the power of compound interest over time  
 - Compare savings, bonds, and stocks  
-- Learn risk, volatility, diversification, and market events  
+- Learn risk, volatility, diversification, and market-driven outcomes  
 
 ### 5️⃣ Money Memory
 - Match financial terms with their meanings  
 - Reinforces core financial vocabulary through recall-based learning  
 
-*(Additional quiz and learning modules included for finance fundamentals.)*
+*(Additional quiz and learning modules are included to cover finance fundamentals.)*
 
 ---
 
@@ -53,11 +55,11 @@ MoneyWise tracks **learning outcomes**, not just scores:
 
 - Overall **Financial IQ**
 - Subject-wise mastery (budgeting, debt, investing, credit)
-- Mistake pattern analysis
+- Mistake pattern and decision analysis
 - Spending behavior insights
 - Financial resilience indicators
 
-This enables users to **visualize progress over time** and identify areas for improvement.
+This enables users to **visualize progress over time**, identify weak areas, and improve decision-making.
 
 ---
 
@@ -65,24 +67,17 @@ This enables users to **visualize progress over time** and identify areas for im
 - 🎮 Gamified learning with points, levels, and achievements  
 - 📊 Real-time progress analytics & dashboards  
 - 🌐 Multi-language architecture (scalable for regional languages)  
-- 📴 Fully offline-first (PWA)  
-- 🔒 No login, no tracking, privacy-first  
-- 📱 Responsive design (mobile, tablet, desktop)  
+- 📴 Fully offline-first Progressive Web App (PWA)  
+- 🔒 No login, no tracking, privacy-first design  
+- 📱 Responsive across mobile, tablet, and desktop  
 
 ---
 
 ## 📴 Offline-First by Design
-- Works entirely without internet  
-- Powered by Service Worker + LocalStorage  
-- Ideal for low-bandwidth and accessibility-focused environments  
-- All data stored locally on the user’s device  
-
----
-
-## 🚀 Quick Start
-1. Clone or download the repository  
-2. Open `index.html` in any modern browser  
-3. Start playing — no setup and no login required  
+- Works entirely without internet after the first load  
+- Powered by Service Worker and LocalStorage  
+- Designed for low-bandwidth and accessibility-focused environments  
+- All data is stored locally on the user’s device  
 
 ---
 
@@ -98,12 +93,12 @@ This enables users to **visualize progress over time** and identify areas for im
 ## 🌍 Target Users
 - Students (15–22 years)  
 - Young adults & first-job professionals (22–30 years)  
-- Beginners in personal finance  
+- Beginners seeking practical financial literacy  
 
 ---
 
 ## 🔮 Future Enhancements
-- Backend database for large-scale deployment  
+- Backend database for large-scale deployments  
 - AI-powered financial chatbot  
 - Personalized adaptive learning paths  
 - Expanded regional language support  
@@ -113,18 +108,17 @@ This enables users to **visualize progress over time** and identify areas for im
 
 ## 🧑‍💻 Team
 **Solo Developer**  
-End-to-end responsibility for ideation, design, development, testing, and deployment.
+End-to-end ownership of ideation, design, development, testing, and deployment.
 
 ---
 
 ## ⭐ Why MoneyWise Stands Out
-MoneyWise goes beyond quizzes and theory by:
-- Simulating **real financial decisions**
-- Measuring **behavioral improvement**
-- Working **completely offline**
-- Prioritizing **accessibility and privacy**
+MoneyWise goes beyond traditional financial education by:
+- Simulating **real-world financial decisions**
+- Measuring **behavioral improvement over time**
+- Operating **completely offline**
+- Prioritizing **accessibility, inclusivity, and privacy**
 
 ---
 
 **Learn money by living it — not memorizing it.**
-
