@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoneyWise - Financial Literacy Games</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="help.css">
+    <link rel="stylesheet" href="credit-game.css">
+    <link rel="stylesheet" href="progress-analytics.css">
+    <link rel="stylesheet" href="progress-responsive.css">
+</head>
+
+<body>
+    <!-- Ambient Background -->
+    <div class="ambient-background">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+
+        <!-- Floating Icons -->
+        <div class="floating-icon icon-1 huge">💰</div>
+        <div class="floating-icon icon-2 large">📈</div>
+        <div class="floating-icon icon-3 huge">%</div>
+        <div class="floating-icon icon-4 large">$</div>
+        <div class="floating-icon icon-5 medium">€</div>
+        <div class="floating-icon icon-6 large">₿</div>
+
+        <div class="floating-icon icon-7 medium">¥</div>
+        <div class="floating-icon icon-8 small">₹</div>
+        <div class="floating-icon icon-9 medium">£</div>
+        <div class="floating-icon icon-10 small">💎</div>
+        <div class="floating-icon icon-11 small">🪙</div>
+        <div class="floating-icon icon-12 medium">🏦</div>
+        <div class="floating-icon icon-13 small">💸</div>
+        <div class="floating-icon icon-14 medium">💳</div>
+
+        <!-- Extra Density -->
+        <div class="floating-icon icon-15 tiny">.</div>
+        <div class="floating-icon icon-16 tiny">.</div>
+        <div class="floating-icon icon-17 tiny">.</div>
+        <div class="floating-icon icon-18 small">$</div>
+        <div class="floating-icon icon-19 small">%</div>
+        <div class="floating-icon icon-20 tiny">.</div>
+        <div class="floating-icon icon-21 medium">📊</div>
+        <div class="floating-icon icon-22 small">💹</div>
+        <div class="floating-icon icon-23 large">🏧</div>
+        <div class="floating-icon icon-24 small">🧾</div>
+        <div class="floating-icon icon-25 tiny">.</div>
+        <div class="floating-icon icon-26 medium">⚖️</div>
+        <div class="floating-icon icon-27 small">👜</div>
+        <div class="floating-icon icon-28 tiny">.</div>
+        <div class="floating-icon icon-29 medium">🐖</div>
+        <div class="floating-icon icon-30 large">🏙️</div>
+
+        <!-- Even More Density -->
+        <div class="floating-icon icon-31 small">🪙</div>
+        <div class="floating-icon icon-32 medium">💸</div>
+        <div class="floating-icon icon-33 large">🏧</div>
+        <div class="floating-icon icon-34 tiny">.</div>
+        <div class="floating-icon icon-35 small">💎</div>
+        <div class="floating-icon icon-36 medium">📜</div>
+        <div class="floating-icon icon-37 huge">₿</div>
+        <div class="floating-icon icon-38 small">💹</div>
+        <div class="floating-icon icon-39 tiny">.</div>
+        <div class="floating-icon icon-40 medium">⚖️</div>
+        <div class="floating-icon icon-41 large">🏛️</div>
+        <div class="floating-icon icon-42 small">💴</div>
+        <div class="floating-icon icon-43 tiny">.</div>
+        <div class="floating-icon icon-44 medium">💳</div>
+        <div class="floating-icon icon-45 huge">€</div>
+        <div class="floating-icon icon-46 small">💱</div>
+        <div class="floating-icon icon-47 tiny">.</div>
+        <div class="floating-icon icon-48 medium">💰</div>
+        <div class="floating-icon icon-49 large">📉</div>
+        <div class="floating-icon icon-50 small">🧾</div>
+    </div>
+
+    <!-- Splash Screen -->
+    <div id="splashScreen" class="splash-screen active">
+        <div class="splash-content">
+            <div class="game-logo">
+                <div class="logo-icon">💰</div>
+                <h1 class="logo-text">MoneyWise</h1>
+            </div>
+            <div class="splash-tagline" data-i18n="splashTagline">Learn. Save. Invest. Succeed!</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hamburger Menu -->
+    <div id="hamburgerMenu" class="hamburger-menu">
+        <button class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="menu-nav" id="menuNav">
+            <div class="menu-header">
+                <h2 data-i18n="menuTitle">Menu</h2>
+                <button class="menu-close" id="menuClose">✕</button>
+            </div>
+
+            <ul class="menu-list">
+                <li><a href="#" data-page="home" class="menu-item active" data-i18n="navHome">🏠 Home</a></li>
+                <li><a href="#" data-page="profile" class="menu-item" data-i18n="navProfile">👤 Profile & Points</a>
+                </li>
+                <li><a href="#" data-page="progress" class="menu-item" data-i18n="navAnalyze">📊 Analyze Progress</a>
+                </li>
+                <li><a href="#" data-page="settings" class="menu-item" data-i18n="navSettings">⚙️ Game Settings</a></li>
+                <li><a href="#" data-page="about" class="menu-item" data-i18n="navAbout">ℹ️ About</a></li>
+            </ul>
+
+            <div class="menu-footer">
+                <div class="language-selector">
+                    <label for="languageSelect" data-i18n="labelLanguage">🌐 Language:</label>
+                    <select id="languageSelect">
+                        <option value="en">English (English)</option>
+                        <option value="hi">हिन्दी (Hindi)</option>
+                        <option value="gu">ગુજરાતી (Gujarati)</option>
+                    </select>
+                </div>
+                <div class="connection-status">
+                    <span class="status-indicator" id="connectionStatus"></span>
+                    <span id="statusText" data-i18n="offlineMode">Offline Mode</span>
+                </div>
+            </div>
+        </nav>
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div id="mainContainer" class="main-container">
+
+        <!-- Home Page -->
+        <div id="homePage" class="page active">
+            <header class="page-header">
+                <h1 class="page-title" data-i18n="welcomeTitle">Welcome to MoneyWise!</h1>
+                <div class="user-quick-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon">💰</span>
+                        <span class="stat-value" id="headerNetWorth">₹0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🏆</span>
+                        <span class="stat-value" id="headerLevel">1</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <section class="intro-section">
+                    <p class="intro-text" data-i18n="introText">
+                        Master your money! Learn budgeting, investing, credit management, and more through fun,
+                        interactive games.
+                        Build real-world financial skills that will last a lifetime! 💰
+                    </p>
+                </section>
+
+                <section class="games-section">
+                    <h2 class="section-title" data-i18n="skillsToMaster">Financial Skills to Master</h2>
+                    <div class="games-grid" id="gamesGrid">
+                        <!-- Games will be dynamically loaded here -->
+                    </div>
+                </section>
+
+                <section class="features-section">
+                    <h2 class="section-title" data-i18n="featuresTitle">Features</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🎯</div>
+                            <h3 data-i18n="featInteractive">Interactive Learning</h3>
+                            <p data-i18n="featInteractiveDesc">Engage with fun, educational games</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📈</div>
+                            <h3 data-i18n="featTrack">Track Progress</h3>
+                            <p data-i18n="featTrackDesc">Monitor your learning journey</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🌍</div>
+                            <h3 data-i18n="featMultilang">Multi-language</h3>
+                            <p data-i18n="featMultilangDesc">Learn in your preferred language</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📱</div>
+                            <h3 data-i18n="featOffline">Offline Support</h3>
+                            <p data-i18n="featOfflineDesc">Play anywhere, anytime</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Profile & Points Page -->
+        <div id="profilePage" class="page">
+            <header class="page-header">
+                <h1 class="page-title" data-i18n="profileTitle">Profile & Financial Health</h1>
+            </header>
+            <div class="page-content">
+                <div class="profile-container">
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <div class="avatar-circle" id="userAvatar">👤</div>
+                            <button class="avatar-edit" id="changeAvatar">✏️</button>
+                        </div>
+                        <div class="profile-info">
+                            <div class="name-edit-group">
+                                <h2 id="userName">Player</h2>
+                                <button class="name-edit-btn" id="editNameBtn">✏️</button>
+                            </div>
+                            <div class="level-badge">
+                                <span class="badge-icon">🏆</span>
+                                <span>Level <span id="userLevel">1</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stats-card">
+                        <h3 data-i18n="yourStats">Your Stats</h3>
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <div class="stat-number" id="totalNetWorth">₹0</div>
+                                <div class="stat-label" data-i18n="netWorth">Net Worth</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number" id="creditHealth">700</div>
+                                <div class="stat-label" data-i18n="creditHealth">Credit Health</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number" id="emergencyReadiness">0%</div>
+                                <div class="stat-label" data-i18n="empReadiness">Emergency Readiness</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number" id="riskExposure">0%</div>
+                                <div class="stat-label" data-i18n="riskExposure">Risk Exposure</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-card">
+                        <h3 data-i18n="levelProgress">Level Progress</h3>
+                        <div class="level-progress-bar">
+                            <div class="level-progress-fill" id="levelProgressFill"></div>
+                        </div>
+                        <p class="progress-text">
+                            Health Score: <span id="currentLevelPoints">0</span> / <span id="nextLevelPoints">100</span>
+                            to
+                            Level <span id="nextLevel">2</span>
+                        </p>
+                    </div>
+
+                    <div class="achievements-card">
+                        <h3 data-i18n="recentAchievements">Recent Achievements</h3>
+                        <div class="achievements-list" id="achievementsList">
+                            <p class="no-achievements" data-i18n="noAchievements">Start playing to unlock achievements!
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Leaderboard Section -->
+                    <div class="leaderboard-card card">
+                        <h3 data-i18n="leaderboardTitle">🏆 Global Leaderboard</h3>
+                        <p class="section-desc" data-i18n="leaderboardDesc">See how you rank against other students</p>
+                        <div class="leaderboard-list" id="leaderboardList">
+                            <!-- Leaderboard items will be rendered here -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Page -->
+        <!-- Enhanced Progress Page Section -->
+        <!-- Replace the existing progressPage section (lines 271-340) with this -->
+
+        <div id="progressPage" class="page">
+            <header class="page-header">
+                <h1 class="page-title" data-i18n="analyzeTitle">📊 Analyze Your Progress</h1>
+                <p style="color: var(--progress-text-secondary); margin-top: 8px;" data-i18n="analyzeDesc">
+                    Track your financial literacy journey and get personalized improvement tips
+                </p>
+            </header>
+
+            <div class="page-content">
+                <div class="progress-container">
+                    <div class="analytics-grid">
+
+                        <!-- 1. Hero Score Card - Overall Financial IQ (Full Width) -->
+                        <div class="hero-score-card card">
+                            <div class="score-content">
+                                <h3 data-i18n="financialIQ">🎓 Overall Financial IQ</h3>
+                                <p class="score-label" data-i18n="financialIQDesc">Your comprehensive financial literacy
+                                    score</p>
+                                <div id="studentScoreContainer" class="score-display">
+                                    <div class="score-display" style="color: #6366f1;">
+                                        0<span style="font-size: 0.5em; opacity: 0.7;">/100</span>
+                                    </div>
+                                    <div class="score-rank-badge">
+                                        <span>🎓</span>
+                                        <span>Beginner</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="score-decoration" style="font-size: 120px; opacity: 0.15;">🏆</div>
+                        </div>
+
+                        <!-- 2. Subject Performance - Mastery by Category (Left Main, 8 cols) -->
+                        <div class="subject-progress-card card">
+                            <h3 data-i18n="subjectMastery">📊 Subject Mastery</h3>
+                            <p class="section-desc" data-i18n="subjectMasteryDesc">Your performance across different
+                                financial topics</p>
+                            <div id="subjectProgress">
+                                <canvas id="subjectChart" style="max-height: 300px;"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- 3. Improvement Instructions (Right Side, 4 cols) -->
+                        <div class="instruction-card card">
+                            <h3 data-i18n="howToLevelUp">🚀 How to Level Up</h3>
+                            <div id="improvementInstructions" class="instruction-list">
+                                <div class="instruction-item">
+                                    <div class="instruction-icon">✨</div>
+                                    <div class="instruction-text">
+                                        <div class="instruction-title" data-i18n="startJourney">Start Your Journey</div>
+                                        <div class="instruction-desc" data-i18n="startJourneyDesc">
+                                            Play games to unlock personalized improvement tips based on your performance
+                                            patterns.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Critical Mistake Analysis (Full Width) -->
+                        <div class="mistake-review-card card">
+                            <h3 data-i18n="mistakeAnalysis">⚠️ Critical Mistake Analysis</h3>
+                            <p class="section-desc" data-i18n="mistakeAnalysisDesc">Learn from past financial decisions
+                                to avoid similar mistakes in the
+                                future</p>
+                            <div id="mistakeGallery" class="mistake-gallery">
+                                <div class="mistake-empty">
+                                    <div class="mistake-empty-icon">🎉</div>
+                                    <p>No mistakes recorded yet!<br>Keep playing to learn from your choices.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. Spending Habits Chart (Half Width, 6 cols) -->
+                        <div class="analytics-card card">
+                            <h3 data-i18n="spendingHabits">💸 Spending Habits Analysis</h3>
+                            <p class="section-desc" data-i18n="spendingHabitsDesc">How you allocate your resources
+                                across categories</p>
+                            <div id="spendingRatio">
+                                <canvas id="spendingChart" style="max-height: 250px;"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- 6. Financial Resilience Score (Half Width, 6 cols) -->
+                        <div class="analytics-card card">
+                            <h3 data-i18n="resilienceScore">🛡️ Financial Resilience Score</h3>
+                            <p class="section-desc" data-i18n="resilienceScoreDesc">Your readiness to handle financial
+                                challenges</p>
+                            <div id="resilienceScore">
+                                <div class="resilience-gauge" style="--resilience-score: 0;">
+                                    <div class="resilience-circle">
+                                        <div class="resilience-value">0</div>
+                                    </div>
+                                </div>
+                                <div class="resilience-factors">
+                                    <div class="resilience-factor">
+                                        <div class="factor-value">0</div>
+                                        <div class="factor-label" data-i18n="factorEmergency">Emergency Fund</div>
+                                    </div>
+                                    <div class="resilience-factor">
+                                        <div class="factor-value">0</div>
+                                        <div class="factor-label" data-i18n="factorDebt">Debt Control</div>
+                                    </div>
+                                    <div class="resilience-factor">
+                                        <div class="factor-value">0</div>
+                                        <div class="factor-label" data-i18n="factorSavings">Savings Habit</div>
+                                    </div>
+                                    <div class="resilience-factor">
+                                        <div class="factor-value">0</div>
+                                        <div class="factor-label" data-i18n="factorInvestment">Investment IQ</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 7. Recommended Learning Path (Wide, 8 cols) -->
+                        <div class="tips-card card">
+                            <h3 data-i18n="recommendedPath">💡 Recommended Learning Path</h3>
+                            <p class="section-desc" data-i18n="recommendedPathDesc">Personalized tips to improve your
+                                financial knowledge</p>
+                            <div id="personalizedTips" class="tips-grid">
+                                <div class="tip-item">
+                                    <div class="tip-icon">📚</div>
+                                    <div class="tip-content">
+                                        <div class="tip-title" data-i18n="startBasics">Start with the Basics</div>
+                                        <div class="tip-description" data-i18n="startBasicsDesc">
+                                            Begin your financial literacy journey by mastering fundamental concepts
+                                            like budgeting and saving. These form the foundation for all other skills.
+                                        </div>
+                                        <a href="#" class="tip-action" onclick="navigateToPage('home'); return false;"
+                                            data-i18n="exploreGames">
+                                            Explore Games →
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 8. Recent Activity Timeline (Narrow, 4 cols) -->
+                        <div class="recent-activity-card card">
+                            <h3 data-i18n="recentActivity">⏱️ Recent Activity</h3>
+                            <p class="section-desc" data-i18n="recentActivityDesc">Your latest game sessions</p>
+                            <div id="recentActivity">
+                                <!-- Activity list will be rendered here -->
+                            </div>
+                        </div>
+
+                        <!-- 9. Financial IQ History Chart (Full Width) -->
+                        <div class="history-chart-card card" style="grid-column: 1 / -1;">
+                            <h3 data-i18n="historyChart">📈 Financial IQ Progress Over Time</h3>
+                            <p class="section-desc" data-i18n="historyChartDesc">Track your learning journey and see how
+                                your financial knowledge
+                                grows</p>
+                            <div style="padding: 20px 0;">
+                                <canvas id="historyChart" style="max-height: 300px;"></canvas>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Settings Page -->
+        <div id="settingsPage" class="page">
+            <header class="page-header">
+                <h1 class="page-title" data-i18n="settingsTitle">Game Settings</h1>
+            </header>
+            <div class="page-content">
+                <div class="settings-container">
+                    <div class="settings-section">
+                        <h3 data-i18n="audioSettings">Audio Settings</h3>
+                        <div class="setting-item">
+                            <label for="soundToggle" data-i18n="soundEffects">Sound Effects</label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="soundToggle" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label for="musicToggle" data-i18n="bgMusic">Background Music</label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="musicToggle" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label for="volumeControl" data-i18n="labelVolume">Volume</label>
+                            <input type="range" id="volumeControl" min="0" max="100" value="70" class="volume-slider">
+                            <span id="volumeValue">70%</span>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3 data-i18n="gamePrefs">Game Preferences</h3>
+                        <div class="setting-item">
+                            <label for="difficultySelect" data-i18n="labelDifficulty">Difficulty Level</label>
+                            <select id="difficultySelect" class="settings-select">
+                                <option value="easy" data-i18n="diffEasy">Easy</option>
+                                <option value="medium" selected data-i18n="diffMedium">Medium</option>
+                                <option value="hard" data-i18n="diffHard">Hard</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label for="timerToggle" data-i18n="labelShowTimer">Show Timer</label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="timerToggle" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label for="hintsToggle" data-i18n="labelEnableHints">Enable Hints</label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="hintsToggle" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3 data-i18n="displaySettings">Display</h3>
+                        <div class="setting-item">
+                            <label for="themeSelect" data-i18n="labelTheme">Theme</label>
+                            <select id="themeSelect" class="settings-select">
+                                <option value="light" data-i18n="themeLight">Light</option>
+                                <option value="dark" data-i18n="themeDark">Dark</option>
+                                <option value="auto" selected data-i18n="themeAuto">Auto</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label for="animationsToggle" data-i18n="labelAnimations">Animations</label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="animationsToggle" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3 data-i18n="dataManagement">Data Management</h3>
+                        <button class="settings-button" id="resetProgress" data-i18n="btnReset">Reset Progress</button>
+                        <button class="settings-button" id="clearCache" data-i18n="btnClearCache">Clear Cache</button>
+                        <button class="settings-button primary" id="saveSettings" data-i18n="btnSaveSettings">Save
+                            Settings</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Page -->
+        <div id="aboutPage" class="page">
+            <header class="page-header">
+                <h1 class="page-title" data-i18n="aboutTitle">MoneyWise - About</h1>
+            </header>
+            <div class="page-content">
+                <div class="about-container">
+                    <div class="about-section">
+                        <h2 data-i18n="missionTitle">📚 Our Mission</h2>
+                        <p data-i18n="missionDesc">
+                            MoneyWise is designed to empower young adults and college students with essential financial
+                            skills.
+                            We believe financial literacy should be fun, interactive, and accessible to everyone. Make
+                            smart money decisions for life!
+                        </p>
+                    </div>
+
+                    <div class="about-section">
+                        <h2 data-i18n="howItWorks">🎮 How It Works</h2>
+                        <ul class="about-list">
+                            <li data-i18n="step1">Choose a financial skill to develop</li>
+                            <li data-i18n="step2">Play interactive games that teach real-world money management</li>
+                            <li data-i18n="step3">Earn points and level up as you master each topic</li>
+                            <li data-i18n="step4">Track your financial literacy progress</li>
+                            <li data-i18n="step5">Learn budgeting, investing, credit, taxes, and more!</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-section">
+                        <h2 data-i18n="featuresSection">✨ Features</h2>
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <span class="feature-emoji">🌐</span>
+                                <div>
+                                    <strong data-i18n="featMultilang">Multi-language Support</strong>
+                                    <p data-i18n="featMultilangDesc">Learn in your preferred language</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-emoji">📱</span>
+                                <div>
+                                    <strong data-i18n="featOffline">Offline Mode</strong>
+                                    <p data-i18n="featOfflineDesc">Play without internet connection</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-emoji">🏆</span>
+                                <div>
+                                    <strong data-i18n="featGamified">Gamification</strong>
+                                    <p data-i18n="featGamifiedDesc">Points, levels, and achievements</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-emoji">📊</span>
+                                <div>
+                                    <strong data-i18n="featProgress">Progress Tracking</strong>
+                                    <p data-i18n="featProgressDesc">Detailed analytics and insights</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-section">
+                        <h2 data-i18n="contactTitle">📞 Contact & Support</h2>
+                        <p>
+                            <span data-i18n="contactDesc">Need help? Have suggestions? We'd love to hear from
+                                you!</span>
+                            <br><br>
+                            Email: support@moneywise.com<br>
+                            Version: 1.0.0
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Play Area -->
+        <div id="gamePlayPage" class="page">
+            <div class="game-header">
+                <button class="back-button" id="backToHome" data-i18n="btnBack">← Back</button>
+                <h2 id="gameTitle">Game Title</h2>
+                <div class="game-stats">
+                    <span class="game-stat">⭐ <span id="gamePoints">0</span></span>
+                    <span class="game-stat">⏱️ <span id="gameTimer">00:00</span></span>
+                </div>
+            </div>
+            <div id="gameContainer" class="game-container">
+                <!-- Game content will be loaded here -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notification" class="notification">
+        <span id="notificationText"></span>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script src="help-system.js"></script>
+    <script src="sound-system.js"></script>
+    <script src="utilities.js"></script>
+    <!-- Chart.js for Analytics - Loaded with defer for better performance -->
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="credit-game.js"></script>
+    <script src="progress-analytics.js"></script>
+    <script src="games.js"></script>
+    <script src="more-games.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<!-- i want that you add 5 levels in all games mean begiiners to advance type so it would be very much intresting and fasinating to clearn levels and after completeing one level with good score the next level will open and made it intresting , creative and attractive for users that they love to play our game  -->

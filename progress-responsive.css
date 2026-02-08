@@ -1,0 +1,108 @@
+/* ============================================
+   MOBILE RESPONSIVENESS
+   ============================================ */
+@media (max-width: 768px) {
+    .analytics-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .hero-score-card {
+        grid-column: 1;
+    }
+
+    .subject-progress-card,
+    .instructions-card,
+    .mistake-review-card,
+    .analytics-card,
+    .resilience-card,
+    .learning-path-card,
+    .recent-activity-card,
+    .history-chart-card {
+        grid-column: 1;
+    }
+
+    .hero-score-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .score-display {
+        font-size: 48px;
+    }
+
+    .resilience-gauge {
+        width: 120px;
+        height: 120px;
+    }
+
+    .resilience-factors {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    canvas {
+        max-height: 250px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .analytics-grid {
+        gap: 10px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card h3 {
+        font-size: 16px;
+    }
+
+    .score-display {
+        font-size: 36px;
+    }
+
+    .resilience-factors {
+        grid-template-columns: 1fr;
+    }
+
+    canvas {
+        max-height: 200px !important;
+    }
+}
+
+/* Loading States for Charts */
+.chart-loading {
+    position: relative;
+    min-height: 200px;
+}
+
+.chart-loading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.chart-loading::after {
+    content: 'Loading chart...';
+    position: absolute;
+    top: calc(50% + 35px);
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

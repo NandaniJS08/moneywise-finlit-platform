@@ -1,0 +1,369 @@
+/* =========================================
+   UNIVERSAL HELP SYSTEM STYLES
+   ========================================= */
+
+/* Root variables fallback if not defined elsewhere */
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.95);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --modal-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --primary-glow: rgba(99, 102, 241, 0.5);
+}
+
+[data-theme="dark"] {
+    --glass-bg: rgba(15, 23, 42, 0.95);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Container for Help Buttons */
+/* Container for Help Buttons */
+.game-help-buttons {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+    margin-right: 15px;
+    pointer-events: auto;
+}
+
+/* Help Button Styling */
+.help-btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--border-color, #e2e8f0);
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text-primary, #333);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    font-family: inherit;
+    outline: none;
+}
+
+[data-theme="dark"] .help-btn {
+    border-color: var(--glass-border);
+    color: #f1f5f9;
+}
+
+.help-btn .icon {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.help-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: var(--primary, #6366f1);
+    color: white;
+    border-color: transparent;
+}
+
+.help-btn:active {
+    transform: translateY(0) scale(0.95);
+}
+
+/* Universal Modal Overlay */
+.uni-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    /* Darker backdrop */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.uni-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Content Card */
+.uni-modal-content {
+    background: var(--glass-bg);
+    width: 90%;
+    max-width: 600px;
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 24px;
+    padding: 2.5rem;
+    position: relative;
+    box-shadow: var(--modal-shadow);
+    border: 1px solid var(--glass-border);
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Bouncy spring effect */
+}
+
+/* Animations active state */
+.uni-modal-overlay.active .uni-modal-content {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+/* Close Button */
+.uni-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    font-size: 24px;
+    color: var(--text-secondary, #64748b);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.uni-modal-close:hover {
+    background: var(--danger, #ef4444);
+    color: white;
+    transform: rotate(90deg) scale(1.1);
+}
+
+/* Modal Header */
+.uni-modal-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.uni-modal-icon {
+    font-size: 64px;
+    margin-bottom: 1rem;
+    display: inline-block;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    animation: icon-float 3s ease-in-out infinite;
+}
+
+@keyframes icon-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.uni-modal-header h2 {
+    font-size: 28px;
+    color: var(--primary, #6366f1);
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, var(--primary, #6366f1), var(--secondary, #ec4899));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Sections */
+.uni-section {
+    margin-bottom: 2rem;
+    animation: slide-up 0.5s ease backwards;
+}
+
+/* Staggered animation delays for sections */
+.uni-section:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.uni-section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.uni-section:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.uni-section h3 {
+    font-size: 14px;
+    color: var(--text-secondary, #64748b);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    border-bottom: 2px solid var(--border-color, #e2e8f0);
+    padding-bottom: 8px;
+    font-weight: 700;
+}
+
+.uni-section p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-primary, #333);
+}
+
+[data-theme="dark"] .uni-section p {
+    color: #e2e8f0;
+}
+
+/* Lists */
+.uni-list {
+    list-style: none;
+    padding: 0;
+}
+
+.uni-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border-color, #e2e8f0);
+    font-size: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--text-primary, #333);
+}
+
+[data-theme="dark"] .uni-list li {
+    color: #e2e8f0;
+}
+
+.uni-list li::before {
+    content: '👉';
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+/* Pro Tips Styling */
+.uni-section.tip {
+    background: rgba(245, 158, 11, 0.1);
+    padding: 20px;
+    border-radius: 16px;
+    border-left: 5px solid var(--warning, #f59e0b);
+}
+
+.uni-section.tip h3 {
+    color: var(--warning, #f59e0b);
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Real World Example Styling */
+.uni-section.example {
+    background: linear-gradient(to right, rgba(16, 185, 129, 0.05), rgba(16, 185, 129, 0.1));
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.uni-section.example h3 {
+    color: var(--success, #10b981);
+    border-bottom: none;
+}
+
+/* Highlight Text */
+.highlight {
+    font-weight: 700;
+    color: var(--primary, #6366f1);
+    font-size: 1.1em !important;
+    text-align: center;
+    background: rgba(99, 102, 241, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+/* Action Button */
+.uni-action-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, var(--primary, #6366f1), var(--secondary, #ec4899));
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.uni-action-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.5);
+    filter: brightness(1.1);
+}
+
+.uni-action-btn:active {
+    transform: translateY(-1px);
+}
+
+.uni-action-btn.secondary {
+    background: transparent;
+    border: 2px solid var(--border-color, #e2e8f0);
+    color: var(--text-secondary, #64748b);
+    box-shadow: none;
+}
+
+.uni-action-btn.secondary:hover {
+    border-color: var(--text-secondary, #64748b);
+    color: var(--text-primary, #333);
+    background: rgba(0, 0, 0, 0.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .game-help-buttons {
+        margin-right: 5px;
+        gap: 5px;
+    }
+
+    .help-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .help-btn .text {
+        display: none;
+        /* Hide text on small screens, show only icon */
+    }
+
+    .uni-modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .uni-modal-icon {
+        font-size: 48px;
+    }
+}
